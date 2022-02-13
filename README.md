@@ -25,6 +25,7 @@ Asus Eee PC 4g (modelo 701) [1]
   * softwares adicionais do LXDE pelos respectivos pacotes
     * `lxappearance`, `lxtask`
 * Driver openchrome para adaptador de vídeo Intel GMA 900 [2]
+  * produziu melhora visível; sempre verifique se est
 * NetworkManager e front-end `nm-tray`
 
 ### Software de aplicação
