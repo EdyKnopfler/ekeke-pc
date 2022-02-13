@@ -1,0 +1,5 @@
+[Desktop Entry]
+Type=Link
+Name=Reproduzir YouTube
+Icon=mpv
+URL=/home/usuario/Scripts/stream.sh
