@@ -1,7 +1,7 @@
 ## Streaming de vídeo
 
-[Vídeo do computador engasgando no YouTube](https://drive.google.com/file/d/13hOumPMO-s5PBKxSDxw2UgU5GHPnHk0g/view?usp=sharing)
-[Vídeo do computador reproduzindo o vídeo suavemente](https://drive.google.com/file/d/1754jjdy9fZNnqHfpviIcOxxF179Erfey/view?usp=sharing)
+* [Vídeo do computador engasgando no YouTube](https://drive.google.com/file/d/13hOumPMO-s5PBKxSDxw2UgU5GHPnHk0g/view?usp=sharing)
+* [Vídeo do computador reproduzindo o vídeo suavemente](https://drive.google.com/file/d/1754jjdy9fZNnqHfpviIcOxxF179Erfey/view?usp=sharing)
 
 ### Máquina de teste
 
