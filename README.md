@@ -31,7 +31,7 @@ Asus Eee PC 4g (modelo 701) [1]
 ### Software de aplicação
 
 * Browser SeaMonkey
-  * único que rodou vídeos do YouTube em experimentos anteriores, com máquinas antigas porém um pouco melhores
+   * único que rodou vídeos do YouTube em experimentos anteriores, com máquinas antigas porém um pouco melhores
 * Browser NetSurf
   * sugestão do Giuliano; browser sem suporte a JavaScript
   * opção para ler de forma limpa e leve as páginas carregadas de anúncios que sobrecarregam o computador
