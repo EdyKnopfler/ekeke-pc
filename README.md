@@ -30,7 +30,7 @@ Asus Eee PC 4g (modelo 701) [1]
   * produziu melhora visível; sempre verifique se está aproveitando o adaptador ao máximo
 * NetworkManager e front-end `nm-tray`
 * Utilitários do antiX como o [advert blocker](https://github.com/antiX-Linux/advert-block-antix) tornam a navegação muito mais fluida
-  * o excesso de an
+  * o excesso de anuncios realmente compromete a navegação nessas máquinas!
 
 ### Software de aplicação
 
