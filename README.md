@@ -17,6 +17,7 @@ Asus Eee PC 4g (modelo 701) [1]
 ### Software de sistema 
 
 **Obs. 1:** uma distro semelhante já configurada de forma próxima ao descrito e que deu bons resultados é a [Loc-OS](https://loc-os.sourceforge.io/)
+
 **Obs. 2:** outra distro semelhante que também rodou bem na máquina foi a  [Raspberry Pi Desktop](https://www.raspberrypi.com/software/raspberry-pi-desktop/)
 
 * S.O. Debian netinstall, firmware, nonfree 
