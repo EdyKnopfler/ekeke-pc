@@ -16,6 +16,9 @@ Asus Eee PC 4g (modelo 701) [1]
 
 ### Software de sistema 
 
+**Obs. 1:** uma distro semelhante já configurada de forma próxima ao descrito e que deu bons resultados é a [Loc-OS](https://loc-os.sourceforge.io/)
+**Obs. 2:** outra distro semelhante que também rodou bem na máquina foi a  [Raspberry Pi Desktop](https://www.raspberrypi.com/software/raspberry-pi-desktop/)
+
 * S.O. Debian netinstall, firmware, nonfree 
   * usei o mais atual neste instante, o Debian 11 Bullseye
 * Desktop LXDE
@@ -29,16 +32,14 @@ Asus Eee PC 4g (modelo 701) [1]
 * NetworkManager e front-end `nm-tray`
 * Utilitários do antiX como o [advert blocker](https://github.com/antiX-Linux/advert-block-antix) tornam a navegação muito mais fluida
   * o excesso de anúncios realmente compromete a navegação nessas máquinas!
+* [Trocado `systemd` pelo `sysvinit`](https://wiki.debian.org/Init)
 
 ### Software de aplicação
 
 * Browser SeaMonkey
    * único que rodou vídeos do YouTube em experimentos anteriores, com máquinas antigas porém um pouco melhores
-* Browser NetSurf
-  * sugestão do Giuliano @mrparrot; browser sem suporte a JavaScript
-  * opção para ler de forma limpa e leve as páginas carregadas de anúncios que sobrecarregam o computador
-* Processador de textos AbiWord
-* Planilha Gnumeric
+* LibreOffice
+   * testado contra AbiWord e Gnumeric; neste caso específico o LO funcionou melhor porém em outros foi diferente
 * Editor de texto plano Mousepad
   * ajuda a editar scripts e arquivos de configuração
   * pode ser útil para o usuário final
