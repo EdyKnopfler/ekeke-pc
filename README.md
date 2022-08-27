@@ -62,6 +62,8 @@ Asus Eee PC 4g (modelo 701) [1]
 
 ### Tunings
 
+* swappiness [5]
+  * ajustado para 1 (casos extremos) em máquinas muito antigas
 * cache_pressure [5][6]
   * default no Linux é 100
   * ajustado para 10 em máquinas muito antigas
