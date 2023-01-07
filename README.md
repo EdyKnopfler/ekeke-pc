@@ -22,6 +22,7 @@ Asus Eee PC 4g (modelo 701) [1]
 
 * S.O. Debian netinstall, firmware, nonfree 
   * usei o mais atual neste instante, o Debian 11 Bullseye
+  * feito downgrade de Kernel para o 4.9 ativando temporariamente os repositórios do Debian 10 Buster
 * Desktop LXDE
   * não escolhi pelo instalador
   * instalei o sistema básico sem software adicional
@@ -31,14 +32,18 @@ Asus Eee PC 4g (modelo 701) [1]
 * Driver openchrome para adaptador de vídeo Intel GMA 900 [2]
   * produziu melhora visível; sempre verifique se está aproveitando o adaptador ao máximo
 * NetworkManager e front-end `nm-tray`
+  * substituições possíveis: `connman` e `connman-gtk`
 * Utilitários do antiX como o [advert blocker](https://github.com/antiX-Linux/advert-block-antix) tornam a navegação muito mais fluida
   * o excesso de anúncios realmente compromete a navegação nessas máquinas!
 * [Trocado `systemd` pelo `sysvinit`](https://wiki.debian.org/Init)
 
 ### Software de aplicação
 
-* Browser SeaMonkey
-   * único que rodou vídeos do YouTube em experimentos anteriores, com máquinas antigas porém um pouco melhores
+* Browsers SeaMonkey e Falkon
+   * SeaMonkey foi o que rodou vídeos do YouTube em experimentos anteriores, com máquinas antigas porém um pouco melhores
+     * não tinha testado o Falkon
+   * Falkon é mais responsivo e abre mais páginas modernas; porém ocupa mais memória e deve ser usado com mais cuidado
+   * Favoritadas páginas móveis do YouTube (por onde o usuário pode copiar os links para acionar os scripts) e Facebook, por serem mais leves
 * LibreOffice
    * testado contra AbiWord e Gnumeric; neste caso específico o LO funcionou melhor porém em outros foi diferente
 * Editor de texto plano Mousepad
@@ -48,17 +53,11 @@ Asus Eee PC 4g (modelo 701) [1]
   * baixa vídeos do YouTube, obtém formatos disponíveis e link para streaming
   * fork do youtube-dl
   * atualização recente
-* `mplayer`
-  * player de vídeo em linha de comando
-  * controle pelo teclado: espaço pausa, setas avançam e retrocedem
-  * suporta streaming; usado em conjunto com o yt-dlp [4]
 * `xclip`
   * interação com clipboard do sistema
   * comodidade para os scripts que fazem streaming ou download, bastando copiar o link
-* `mpv`
-  * frontend para o mplayer
-  * interface amigável para reprodução de vídeos baixados
-  * VLC pode ser uma alternativa
+* VLC
+  * player que apresentou o melhor desempenho ao ser chamado pelo script para "streamar" o vídeo
 
 ### Tunings
 
@@ -66,7 +65,8 @@ Asus Eee PC 4g (modelo 701) [1]
   * ajustado para 1 (casos extremos) em máquinas muito antigas
 * cache_pressure [5][6]
   * default no Linux é 100
-  * ajustado para 10 em máquinas muito antigas
+  * ajustado para 10 em máquinas muito antigas, com pouca memória
+  * pode ser útil após um upgrade na RAM, para acelerar um pouco o acesso aos arquivos
 * I/O scheduler [5][7]
   * não ajustado nesta máquina pois não possui disco rígido
   * usado BFQ em experimentos anteriores
