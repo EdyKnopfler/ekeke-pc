@@ -8,11 +8,13 @@
 Asus Eee PC 4g (modelo 701) [1]
 
 * Celeron M ULV 900MHz
+  * roda por default a _"incríveis" 630MHz_, ativando o módulo `p4-clockmod` do kernel na utilização a potência total é utilizada
 * memória RAM de fábrica 512 MB, aumentada para 1GB
 * 4GB de armazenamento interno, algo como uma memória flash ou SSD primitivo
-* SD card de 30GB
-  * configurável na BIOS como armazenamento principal
-  * onde foi instalado todo o software
+  * inicialmente o sistema foi instalado em um SDCard
+  * posteriormente tentou-se enxugar a instalação para caber no armazenamento principal, tendo sobrado aproximadamente 500MB
+* interface wireless USB alternativa ~1Gbit/s
+  * onboard é somente 100Mbit/s
 
 ### Software de sistema 
 
@@ -23,6 +25,7 @@ Asus Eee PC 4g (modelo 701) [1]
 * S.O. Debian netinstall, firmware, nonfree 
   * usei o mais atual neste instante, o Debian 11 Bullseye
   * feito downgrade de Kernel para o 4.9 ativando temporariamente os repositórios do Debian 10 Buster
+  * [kernel compilado](https://github.com/EdyKnopfler/compilando-kernel) diretamente para o processador da máquina, com corte de inúmeros módulos não usados
 * Desktop LXDE
   * não escolhi pelo instalador
   * instalei o sistema básico sem software adicional
@@ -39,10 +42,8 @@ Asus Eee PC 4g (modelo 701) [1]
 
 ### Software de aplicação
 
-* Browsers SeaMonkey e Falkon
-   * SeaMonkey foi o que rodou vídeos do YouTube em experimentos anteriores, com máquinas antigas porém um pouco melhores
-     * não tinha testado o Falkon
-   * Falkon é mais responsivo e abre mais páginas modernas; porém ocupa mais memória e deve ser usado com mais cuidado
+* Browser [SeaMonkey 2.53.9](http://ftp.mozilla.org/pub/mozilla.org/seamonkey/releases/)
+   * Foi o que rodou vídeos do YouTube em experimentos anteriores, com máquinas antigas porém um pouco melhores
    * Favoritadas páginas móveis do YouTube (por onde o usuário pode copiar os links para acionar os scripts) e Facebook, por serem mais leves
 * LibreOffice
    * testado contra AbiWord e Gnumeric; neste caso específico o LO funcionou melhor porém em outros foi diferente
@@ -65,11 +66,10 @@ Asus Eee PC 4g (modelo 701) [1]
   * ajustado para 1 (casos extremos) em máquinas muito antigas
 * cache_pressure [5][6]
   * default no Linux é 100
-  * ajustado para 10 em máquinas muito antigas, com pouca memória
+  * ajustado para 50 em máquinas muito antigas, com pouca memória
   * pode ser útil após um upgrade na RAM, para acelerar um pouco o acesso aos arquivos
 * I/O scheduler [5][7]
-  * não ajustado nesta máquina pois não possui disco rígido
-  * usado BFQ em experimentos anteriores
+  * usado BFQ em máquinas muito antigas
 
 ### Contexto
 
