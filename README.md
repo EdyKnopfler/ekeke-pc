@@ -5,7 +5,7 @@
 
 ### Máquina de teste
 
-Asus Eee PC 4g (modelo 701) [1]
+[Asus Eee PC 4g (modelo 701)](https://icecat.biz/br/p/asus/eeepc4g-bk054/eee+pc-notebooks-eee+pc+4g-1621096.html)
 
 * Celeron M ULV 900MHz
   * roda por default a _"incríveis" 630MHz_, ativando o módulo `p4-clockmod` do kernel na utilização a potência total é utilizada
@@ -32,8 +32,6 @@ Asus Eee PC 4g (modelo 701) [1]
   * instalado LXDE mínimo pelo pacote `lxde-core`
   * softwares adicionais do LXDE pelos respectivos pacotes
     * `lxappearance`, `lxtask`
-* Driver openchrome para adaptador de vídeo Intel GMA 900 [2]
-  * produziu melhora visível; sempre verifique se está aproveitando o adaptador ao máximo
 * NetworkManager e front-end `nm-tray`
   * substituições possíveis: `connman` e `connman-gtk`
 * Utilitários do antiX como o [advert blocker](https://github.com/antiX-Linux/advert-block-antix) tornam a navegação muito mais fluida
@@ -50,7 +48,7 @@ Asus Eee PC 4g (modelo 701) [1]
 * Editor de texto plano Mousepad
   * ajuda a editar scripts e arquivos de configuração
   * pode ser útil para o usuário final
-* yt-dlp [3]
+* [yt-dlp](https://github.com/yt-dlp/yt-dlp/releases)
   * baixa vídeos do YouTube, obtém formatos disponíveis e link para streaming
   * fork do youtube-dl
   * atualização recente
@@ -60,35 +58,23 @@ Asus Eee PC 4g (modelo 701) [1]
 * VLC
   * player que apresentou o melhor desempenho ao ser chamado pelo script para "streamar" o vídeo
 
-### Tunings
+### [Tunings](https://www.akitaonrails.com/2017/01/17/optimizing-linux-for-slow-computers)
 
-* swappiness [5]
+* [swappiness](https://www.google.com/search?client=firefox-b-d&q=swappiness)
   * ajustado para 1 (casos extremos) em máquinas muito antigas
-* cache_pressure [5][6]
+* [cache_pressure](https://www.linuxadictos.com/en/cache-pressure-optimizes-linux-performance.html)
   * default no Linux é 100
   * ajustado para 50 em máquinas muito antigas, com pouca memória
   * pode ser útil após um upgrade na RAM, para acelerar um pouco o acesso aos arquivos
-* I/O scheduler [5][7]
+* [I/O scheduler](https://www.cloudbees.com/blog/linux-io-scheduler-tuning)
   * usado BFQ em máquinas muito antigas
 
 ### Contexto
 
-Muito se fala em como o Linux pode dar um fôlego a computadores defasados, porém o conteúdo vai pouco além de listar distribuições consideradas leves. Isso, somado ao uso de browsers também considerados leves, pode ser suficiente em muitos casos. Por algum tempo testei várias delas em laptops bem antigos (cerca de 10 anos de idade) que estavam parados em casa. Tendo lido um post do Fabio Akita [5], resolvi testar os tunings do cache e do escalonador de E/S, conseguindo melhorar significativamente o desempenho. Nessas máquinas em específico, o SeaMonkey foi o único browser que conseguiu rodar vídeos do YouTube, então considerei que elas foram revividas com sucesso. Não ficaram "rápidas", porém estavam responsivas e usáveis. Foram doadas a duas mães com crianças em idade escolar.
+Muito se fala em como o Linux pode dar um fôlego a computadores defasados, porém o conteúdo vai pouco além de listar distribuições consideradas leves. Isso, somado ao uso de browsers também considerados leves, pode ser suficiente em muitos casos. Por algum tempo testei várias delas em laptops bem antigos (cerca de 10 anos de idade) que estavam parados em casa. Tendo lido um [post do Fabio Akita](https://www.akitaonrails.com/2017/01/17/optimizing-linux-for-slow-computers), resolvi testar os tunings do cache e do escalonador de E/S, conseguindo melhorar significativamente o desempenho. Nessas máquinas em específico, o SeaMonkey foi o único browser que conseguiu rodar vídeos do YouTube, então considerei que elas foram revividas com sucesso. Não ficaram "rápidas", porém estavam responsivas e usáveis. Foram doadas a duas mães com crianças em idade escolar.
 
 No entanto, permaneceu a questão: como fazer um computador bem mais antigo dar conta de reproduzir vídeos em streaming, um uso tão trivial hoje em dia? É certo que o YouTube é muito antigo e na época não havia full HD, mas mesmo abrindo mão disso o desempenho do browser hoje ao reproduzir vídeo em streaming nelas é sofrível. De lá para cá o YouTube e o software mudou para se adaptar às tecnologias mais novas: multicore, full HD, conexões em fibra óptica... Se for possível fazer uma carroça consumir esse streaming, muita velharia parada pode ser reaproveitada ou doada.
 
-Recentemente encontrei à venda no Marketplace do Facebook um pequeno laptop que havia sido cobaia de um experimento no canal Diolinux [8], em estado de novo. Imediatamente comprei e comecei a fazer experimentos, cujos resultados publico neste repositório do GitHub. Provavelmente ainda há mais melhorias que podem ser feitas. Instalei o S.O. básico de maneira semelhante aos primeiros com que experimentei e a primeira coisa foi conferir se o SeaMonkey rodava bem o YouTube: não roda, rapidamente o vídeo é ajustado para 144p, fica dando muitos lags e a máquina perde completamente a responsividade. Procurei uma forma de realizar streaming por software alternativo.
+Recentemente encontrei à venda no Marketplace do Facebook um pequeno laptop que havia sido cobaia de um [experimento no canal Diolinux](https://www.youtube.com/watch?v=2Pms0HOFSng), em estado de novo. Imediatamente comprei e comecei a fazer experimentos, cujos resultados publico neste repositório do GitHub. Provavelmente ainda há mais melhorias que podem ser feitas. Instalei o S.O. básico de maneira semelhante aos primeiros com que experimentei e a primeira coisa foi conferir se o SeaMonkey rodava bem o YouTube: não roda, rapidamente o vídeo é ajustado para 144p, fica dando muitos lags e a máquina perde completamente a responsividade. Procurei uma forma de realizar streaming por software alternativo.
 
 A ideia é que o usuário possa simplesmente copiar o link e acionar os scripts por lançadores no desktop -- pensando em usuários sem intimidade com o terminal. Os scripts então usam os softwares `xclip` para ler o clipboard, `yt-dlp` para obter o link do stream (ou, alternativamente, baixar o vídeo) e o mplayer para executá-lo. O desempenho foi satisfatório no laptop em qualidade 360p, o que já era antecipado e também não é grande problema pois a resolução da tela é apenas 800x480!
-
-### Referências
-
-* [1] https://icecat.biz/br/p/asus/eeepc4g-bk054/eee+pc-notebooks-eee+pc+4g-1621096.html
-* [2] https://forums.linuxmint.com/viewtopic.php?t=345457
-* [3] https://github.com/yt-dlp/yt-dlp/releases
-* [4] https://www.youtube.com/watch?v=QCuq0_nY3Xk
-* [5] https://www.akitaonrails.com/2017/01/17/optimizing-linux-for-slow-computers
-* [6] https://www.linuxadictos.com/en/cache-pressure-optimizes-linux-performance.html
-* [7] https://www.cloudbees.com/blog/linux-io-scheduler-tuning
-* [8] https://www.youtube.com/watch?v=2Pms0HOFSng
-* [9] https://www.raspberrypi.com/software/raspberry-pi-desktop/
