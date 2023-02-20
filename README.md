@@ -23,8 +23,10 @@
 **Obs. 2:** outra distro semelhante que também rodou bem na máquina foi a  [Raspberry Pi Desktop](https://www.raspberrypi.com/software/raspberry-pi-desktop/)
 
 * S.O. Debian netinstall, firmware, nonfree 
-  * usei o mais atual neste instante, o Debian 11 Bullseye
-  * feito downgrade de Kernel para o 4.9 ativando temporariamente os repositórios do Debian 10 Buster
+  * Busquei a versão mais antiga ainda instalável, a Debian 9 Stretch
+    * Havia usado a versão 11 antes; obtida discreta melhora com o downgrade
+    * Modificados os _sources_ para apontar para os repositporios da versão 10
+      * Atualizados somente pacotes necessários para o funcinamento do software escolhido: Python >= 3.7 para o `yt-dlp`, browser Falkon
   * [kernel compilado](https://github.com/EdyKnopfler/compilando-kernel) diretamente para o processador da máquina, com corte de inúmeros módulos não usados
 * Desktop LXDE
   * não escolhi pelo instalador
