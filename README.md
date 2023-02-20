@@ -44,7 +44,9 @@
 
 * Browser [SeaMonkey 2.53.9](http://ftp.mozilla.org/pub/mozilla.org/seamonkey/releases/)
    * Foi o que rodou vídeos do YouTube em experimentos anteriores, com máquinas antigas porém um pouco melhores
-   * Favoritadas páginas móveis do YouTube (por onde o usuário pode copiar os links para acionar os scripts) e Facebook, por serem mais leves
+   * Favoritadas [páginas móveis do YouTube](https://m.youtube.com/?persist_app=1&app=m) (por onde o usuário pode copiar os links para acionar os scripts) e [Facebook](https://m.facebook.com/), por serem mais leves
+    * O _Falkon_ também funcionou bem; é uma boa opção. Baseado no Chromium com uma interface mais enxuta.
+    * Configurado zoom padrão para 90% devido à baixa resolução da tela
 * LibreOffice
    * testado contra AbiWord e Gnumeric; neste caso específico o LO funcionou melhor porém em outros foi diferente
 * Editor de texto plano Mousepad
