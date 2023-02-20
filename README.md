@@ -25,7 +25,7 @@
 * S.O. Debian netinstall, firmware, nonfree 
   * Busquei a versão mais antiga ainda instalável, a Debian 9 Stretch
     * Havia usado a versão 11 antes; obtida discreta melhora com o downgrade
-    * Modificados os _sources_ para apontar para os repositporios da versão 10
+    * Modificados os _sources_ para apontar para os repositrios da versão 10
       * Atualizados somente pacotes necessários para o funcinamento do software escolhido: Python >= 3.7 para o `yt-dlp`, browser Falkon
   * [kernel compilado](https://github.com/EdyKnopfler/compilando-kernel) diretamente para o processador da máquina, com corte de inúmeros módulos não usados
 * Desktop LXDE
